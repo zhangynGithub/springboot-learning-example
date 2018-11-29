@@ -1,5 +1,6 @@
 package org.spring.springboot.web;
 
+import org.spring.springboot.property.SelfProperties;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,4 +16,15 @@ public class HelloWorldController {
     public String sayHello() {
         return "Hello,World!";
     }
+
+
+    @RequestMapping("/personal")
+    public String personalInfo(){
+
+        SelfProperties self = new SelfProperties();
+
+        return self.toString();
+
+    }
+
 }
